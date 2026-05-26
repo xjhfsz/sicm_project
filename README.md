@@ -28,8 +28,8 @@ Substitui o processo manual (interfone + caderno) por um fluxo digital: o morado
 
 ## 🚀 Como executar o projeto do zero
 
-### 1. Clonar o repositório
 ```bash
+1. Clonar o repositório
 git clone https://github.com/xjhfsz/sicm_project.git
 cd sicm
 
