@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="text-center">
+    <h1>Sistema de Identificação e Cadastro de Morador</h1>
+    <p class="lead">Autorize visitantes de forma rápida e segura.</p>
+    <hr>
+    <div class="row mt-5">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Moradores</h5>
+                    <p class="card-text">Gerencie suas autorizações de entrada.</p>
+                    <a href="{% url 'login' %}" class="btn btn-primary">Acessar Painel</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Portaria</h5>
+                    <p class="card-text">Consulte visitantes autorizados hoje.</p>
+                    <a href="{% url 'portaria_lista' %}" class="btn btn-secondary">Visualizar Lista</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

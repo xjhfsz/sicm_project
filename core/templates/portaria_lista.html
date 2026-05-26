@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Visitantes autorizados para hoje ({{ hoje|date:"d/m/Y" }})</h2>
+<form method="get" class="mb-3">
+    <div class="input-group">
+        <input type="text" name="q" class="form-control" placeholder="Pesquisar visitante" value="{{ search_query }}">
+        <button type="submit" class="btn btn-outline-secondary">Buscar</button>
+    </div>
+</form>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Unidade</th>
+            <th>Visitante</th>
+            <th>Morador</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for auth in autorizacoes %}
+        <tr>
+            <td>{{ auth.morador.unidade }}</td>
+            <td>{{ auth.nome_visitante }}</td>
+            <td>{{ auth.morador.user.get_full_name }}</td>
+        </tr>
+        {% empty %}
+        <tr><td colspan="3">Nenhum visitante autorizado para hoje.</td></tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
