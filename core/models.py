@@ -5,6 +5,7 @@ from datetime import date
 
 
 class Morador(models.Model):
+    """Modelo de Morador"""
     user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='morador')
     unidade = models.CharField('Unidade', max_length=10)
     telefone = models.CharField('Telefone', max_length=15, blank=True)
@@ -13,6 +14,7 @@ class Morador(models.Model):
         return f"{self.user.get_full_name()} - {self.unidade}"
 
 class Autorizacao(models.Model):
+    """Modelo de Autorização"""
     morador = models.ForeignKey(Morador, on_delete=models.CASCADE, related_name='autorizacoes')
     nome_visitante = models.CharField('Nome do visitante', max_length=100)
     data_inicio = models.DateField('Data inicial')

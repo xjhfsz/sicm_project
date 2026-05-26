@@ -4,6 +4,16 @@ from django.contrib.auth.forms import UserCreationForm
 from .models import Morador, Autorizacao
 
 class MoradorRegisterForm(UserCreationForm):
+    """
+    Formulario de cadastro de Morador
+    
+    Campos:
+    - username
+    - email
+    - unidade
+    - telefone
+    """
+    
     email = forms.EmailField(required=True)
     unidade = forms.CharField(max_length=10, required=True)
     telefone = forms.CharField(max_length=15, required=False)
