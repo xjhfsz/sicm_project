@@ -111,5 +111,4 @@ Migração para PostgreSQL e deploy em nuvem
 👥 Autores
 Bruno Rodrigues
 Johnathan Fontinele
-Disciplina: Prática Profissional Supervisionada – UEMA/ADS
-Nota 2: MVP – Sistema de Autorização para Condomínio
+Disciplina: Prática Profissional Supervisionada - ETAPA 1 – UEMA/ADS
