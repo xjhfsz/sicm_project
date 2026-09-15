@@ -28,43 +28,44 @@ Substitui o processo manual (interfone + caderno) por um fluxo digital: o morado
 
 ## 🚀 Como executar o projeto do zero
 
-```bash
+
 1. Clonar o repositório
 git clone https://github.com/xjhfsz/sicm_project.git
-cd sicm
+cd sicm_project
 
 2. Criar e ativar ambiente virtual
-Windows:
 
-bash
+- Windows:
+
 python -m venv venv
 venv\Scripts\activate
-Linux / macOS:
 
-bash
+- Linux / macOS:
+
 python3 -m venv venv
 source venv/bin/activate
 
 3. Instalar as dependências
-bash
-pip install -r requirements.txt
-Se você não tem o requirements.txt, crie‑o com:
 
-pip install django
-pip freeze > requirements.txt
+pip install -r requirements.txt
 
 4. Configurar o banco de dados (SQLite)
+
 python manage.py makemigrations
 python manage.py migrate
 
-5. (Opcional) Criar um superusuário para acessar o admin
+5. Criar um superusuário para acessar o admin
+
 python manage.py createsuperuser
 
 6. Executar o servidor de desenvolvimento
+
 python manage.py runserver
+
 Acesse no navegador: http://127.0.0.1:8000/
 
 🧑‍💻 Como usar
+
 Morador:
 Acesse Cadastrar e crie uma conta (informe unidade, nome, e‑mail, senha)
 Faça login com usuário e senha
@@ -83,7 +84,7 @@ Acesse /admin/ com o superusuário criado.
 Gerencie moradores, autorizações e visualize todos os registros.
 
 📁 Estrutura de pastas (essencial)
-text
+
 sicm_project/
 ├── core/
 │   ├── migrations/
@@ -111,4 +112,4 @@ Migração para PostgreSQL e deploy em nuvem
 👥 Autores
 Bruno Rodrigues
 Johnathan Fontinele
-Disciplina: Prática Profissional Supervisionada - ETAPA 1 – UEMA/ADS
+
