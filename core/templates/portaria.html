@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="card shadow-sm border-0">
+    <div class="card-body">
+        <h2 class="h4 fw-bold mb-3">Visitantes autorizados para hoje ({{ hoje|date:"d/m/Y" }})</h2>
+
+        <form method="GET" class="row g-2 mb-4">
+            <div class="col-md-9">
+                <input type="text" name="q" value="{{ query }}" class="form-control" placeholder="Buscar por nome do visitante...">
+            </div>
+            <div class="col-md-3">
+                <button type="submit" class="btn btn-dark w-100">Buscar</button>
+            </div>
+        </form>
+
+        <table class="table table-hover align-middle">
+            <thead class="table-dark">
+                <tr>
+                    <th>Unidade</th>
+                    <th>Visitante</th>
+                    <th>Morador Responsável</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in autorizacoes %}
+                <tr>
+                    <td class="fw-bold">{{ item.morador.unidade }}</td>
+                    <td>{{ item.nome_visitante }}</td>
+                    <td>{{ item.morador.user.first_name }}</td>
+                    <td><span class="badge bg-success">Liberado Hoje</span></td>
+                </tr>
+                {% empty %}
+                <tr>
+                    <td colspan="4" class="text-center text-muted py-4">Nenhum visitante autorizado encontrado para hoje.</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

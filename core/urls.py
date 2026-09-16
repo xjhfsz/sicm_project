@@ -1,13 +1,13 @@
 from django.urls import path
-from django.contrib.auth import views as auth_views
 from . import views
 
 urlpatterns = [
     path('', views.home, name='home'),
-    path('registrar/', views.register, name='register'),
-    path('login/', auth_views.LoginView.as_view(template_name='login.html'), name='login'),
-    path('logout/', auth_views.LogoutView.as_view(next_page='/'), name='logout'),
-    path('morador/dashboard/', views.morador_dashboard, name='morador_dashboard'),
-    path('morador/cadastrar_visitante/', views.cadastrar_visitante, name='cadastrar_visitante'),
-    path('portaria/', views.portaria_lista, name='portaria_lista'),
+    path('cadastro/', views.cadastrar_morador, name='cadastro'),
+    path('login/', views.logar_morador, name='login'),
+    path('logout/', views.deslogar_morador, name='logout'),
+    path('dashboard/', views.dashboard_morador, name='dashboard'),
+    path('portaria/', views.portaria_lista, name='portaria'),
+    path('api/visitantes/', views.listar_criar_visitantes, name='api_visitantes'),
+    path('api/visitantes/<int:visitante_id>/revogar/', views.revogar_visitante, name='api_revogar_visitante'),
 ]

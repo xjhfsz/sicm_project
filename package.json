@@ -1,0 +1,23 @@
+{
+  "name": "sicm_project",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Sistema web desenvolvido em **Django** para automatizar a autorização de entrada em condomínios residenciais.   Substitui o processo manual (interfone + caderno) por um fluxo digital: o morador autoriza o visitante com antecedência e a portaria consulta a lista do dia.",
+  "main": "index.js",
+  "scripts": {
+  "dev": "vite build --watch",
+  "build": "vite build"
+},
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@vitejs/plugin-react": "^6.1.1",
+    "vite": "^8.3.0"
+  },
+  "dependencies": {
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0"
+  }
+}

@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Cadastro de Morador</h2>
+<form method="post">
+    {% csrf_token %}
+    
+    {{ form.username.errors }}
+    <label for="username">Nome do Morador</label>
+    {{ form.username }}
+    {{ form.username.help_text }}
+    </br>
+    </br>
+
+    {{ form.unidade.errors }}
+    {{ form.unidade.label }}
+    {{ form.unidade }}
+    {{ form.unidade.help_text }}
+    </br>
+
+    {{ form.telefone.errors }}
+    {{ form.telefone.label }}
+    {{ form.telefone }}
+    {{ form.telefone.help_text }}
+    </br>
+
+    {{ form.password1.errors }}
+    {{ form.password1.label }}
+    {{ form.password1 }}
+    {{ form.password1.help_text }}
+
+    {{ form.password2.errors }}
+    {{ form.password2.label }}
+    {{ form.password2 }}
+    {{ form.password2.help_text }}
+    </br>
+
+    <button type="submit" class="btn btn-success mt-2">Cadastrar</button>
+    <a href="{% url 'login' %}" class="btn btn-link">Já tem conta? Entrar</a>
+</form>
+{% endblock %}

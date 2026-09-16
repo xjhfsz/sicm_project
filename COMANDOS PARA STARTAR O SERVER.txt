@@ -1,0 +1,10 @@
+ativar ambiente virtual
+
+venv\Scripts\activate.bat
+
+rodar o manage do sicm
+
+python manage.py runserver
+
+
+http://127.0.0.1:8000/
